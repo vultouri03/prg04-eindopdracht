@@ -27,10 +27,7 @@ export class Sword extends Actor {
 
     weaponAttack() {
         this.pos = new Vector(0,0)
-        this.vel.x = 200
-        this.setTimeout(() => {
-            
-        }, timeout);
+        this.vel.x = 200;
         this.pos = new Vector(0, 0)
     }
 
