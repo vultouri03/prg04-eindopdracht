@@ -3,6 +3,7 @@ import { Resources, ResourceLoader } from './resources.js';
 import { Entity } from "./Entity.js";
 
 export class Background extends Actor {
+    
     constructor() {
         super();
     }

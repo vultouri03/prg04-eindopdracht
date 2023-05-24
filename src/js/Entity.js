@@ -13,6 +13,11 @@ export class Entity extends Actor {
 
     
   };
+
+  onInitialize() {
+    this.body.useGravity = true;
+    
+  }
   MoveRigth() {
     this.vel = new Vector(300, 0);
     this.graphics.use(this.animation);
@@ -23,6 +28,8 @@ export class Entity extends Actor {
     this.vel = new Vector(-300, 0);
     this.graphics.use(this.animation);
   }
+
+  
   animationHandler = (image, rows, collumns, width, heigth, length,) => {
     const spriteSheet = SpriteSheet.fromImageSource({
       image: image,

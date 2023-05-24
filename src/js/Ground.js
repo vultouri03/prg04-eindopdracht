@@ -3,6 +3,7 @@ import { Resources, ResourceLoader } from './resources.js';
 import { Entity } from "./Entity.js";
 
 export class Ground extends Actor {
+
     constructor(x, y) {
         super({
             x: x,
@@ -14,7 +15,4 @@ export class Ground extends Actor {
     }
 
     
-    onInitialize() {
-        this.pos = new Vector(700, 400)
-    }
 }
