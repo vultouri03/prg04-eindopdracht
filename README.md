@@ -2,4 +2,4 @@
 
 this project is a simple platformer boss rush game in which you have to beat as many enemies as possible, before losing all your health. 
 
-it can be playes on this link:
+it can be playes on this link:https://vultouri03.github.io/prg04-eindopdracht/
