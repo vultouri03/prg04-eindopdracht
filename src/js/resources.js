@@ -4,7 +4,9 @@ import aliceImage from '../images/Alice.png'
 import background from '../images/background.png'
 import sword from '../images/sword.png'
 import aliceAttackImage from '../images/attack-alice.png'
-
+import gameOver from '../images/gameover.png'
+import ground from '../images/ground.png'
+import slime from '../images/slime.png'
 
 
 const Resources = {
@@ -12,9 +14,14 @@ const Resources = {
     AliceAttack: new ImageSource(aliceAttackImage),
     Alice: new ImageSource(aliceImage),
     Background: new ImageSource(background),
-    Sword: new ImageSource(sword)
+    Sword: new ImageSource(sword),
+    GameOver: new ImageSource(gameOver),
+    Ground: new ImageSource(ground),
+    Slime: new ImageSource(slime)
 };
-const ResourceLoader = new Loader([Resources.AliceWalk, Resources.Alice, Resources.Background, Resources.Sword, Resources.AliceAttack]);
-
-
-export { Resources, ResourceLoader };
+const resourceArray = []
+for (const key in Resources) {
+    resourceArray.push(Resources[key])
+}
+const ResourceLoader = new Loader(resourceArray)
+export { Resources, ResourceLoader }

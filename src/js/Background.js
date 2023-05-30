@@ -4,11 +4,16 @@ import { Entity } from "./Entity.js";
 
 export class Background extends Actor {
     
-    constructor() {
+    constructor(image, xScale, yScale) {
+        
         super();
+        this.image = image
+        this.xScale = xScale;
+        this.yScale = yScale;
+
     }
 
     onInitialize(engine){
-        this.graphics.use(Resources.Background.toSprite());
-        this.scale = new Vector(1.2, 1.2)
+        this.graphics.use(this.image.toSprite());
+        this.scale = new Vector(this.xScale, this.yScale)
 }}

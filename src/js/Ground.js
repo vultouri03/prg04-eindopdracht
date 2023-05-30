@@ -8,10 +8,11 @@ export class Ground extends Actor {
         super({
             x: x,
             y: y,
-            width: 900,
+            width: 700,
             height: 30,
             collisionType: CollisionType.Fixed,
         });
+        this.graphics.use(Resources.Ground.toSprite())
     }
 
     

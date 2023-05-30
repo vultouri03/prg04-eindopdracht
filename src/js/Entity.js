@@ -7,7 +7,7 @@ export class Entity extends Actor {
       x: x,
       y: y,
       width: 100,
-      height: 130,
+      height: 100,
       collisionType: CollisionType.Active,
     });
 
@@ -30,9 +30,11 @@ export class Entity extends Actor {
   }
 
   
-  animationHandler = (image, rows, collumns, width, heigth, length,) => {
+  animationHandler = (image, rows, collumns, width, heigth, length, flipped) => {
+    this.image = image;
+    
     const spriteSheet = SpriteSheet.fromImageSource({
-      image: image,
+      image: this.image,
       grid: {
         rows: rows,
         columns: collumns,
