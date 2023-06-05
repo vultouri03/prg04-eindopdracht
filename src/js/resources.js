@@ -7,6 +7,9 @@ import aliceAttackImage from '../images/attack-alice.png'
 import gameOver from '../images/gameover.png'
 import ground from '../images/ground.png'
 import slime from '../images/slime.png'
+import start from '../images/start.png'
+import button from '../images/startButton.png'
+import beam from '../images/beam.png'
 
 
 const Resources = {
@@ -17,7 +20,10 @@ const Resources = {
     Sword: new ImageSource(sword),
     GameOver: new ImageSource(gameOver),
     Ground: new ImageSource(ground),
-    Slime: new ImageSource(slime)
+    Slime: new ImageSource(slime),
+    Start: new ImageSource(start),
+    Button: new ImageSource(button),
+    Beam: new ImageSource(beam),
 };
 const resourceArray = []
 for (const key in Resources) {

@@ -1,6 +1,7 @@
 import { Actor, Animation, CollisionType, SpriteSheet, Engine, Vector, Input, ExitViewPortEvent, Physics, Timer} from "excalibur";
 import { Resources } from "./resources";
 import { Enemy } from "./enemy";
+import { Beam } from "./beam";
 
 
 
@@ -15,7 +16,9 @@ export class Sword extends Actor {
             height: 70,
             collisionType: CollisionType.Passive,
             });
-        
+        this.beam = new Beam();
+        this.addChild(this.beam);
+        this.beam.pos = new Vector( 5000, 5000)
         
     }
 
@@ -35,6 +38,7 @@ export class Sword extends Actor {
     weaponAttack(engine, vel) {
         
         this.vel.x = vel;
+        this.beam.pos = new Vector(0,0);
         
         const timer = new Timer({      
             fcn: () => this.returnWeapon(engine),      

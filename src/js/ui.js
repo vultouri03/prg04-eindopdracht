@@ -1,7 +1,7 @@
 import { ScreenElement,Label,Font, FontUnit, Color, Vector } from "excalibur";
 
 export class UI extends ScreenElement {
-    score = 0
+    
     scoreText
     healthText
     game
@@ -13,7 +13,7 @@ export class UI extends ScreenElement {
     onInitialize(engine) {
         this.game = engine;
         this.scoreText = new Label({
-            text: `Score: ${this.game.score}`,
+            text: `Score: ${this.game.score.points}`,
             font: new Font({
                 unit: FontUnit.Px,
                 family: 'Impact',
@@ -37,12 +37,7 @@ export class UI extends ScreenElement {
     }
 
     onPreUpdate() {
-        this.scoreText.text = `Score: ${this.game.score}`;
+        this.scoreText.text = `Score: ${this.game.score.points}`;
         this.healthText.text = `HP: ${this.game.player.hp}`
-    }
-
-    updateScore() {
-        this.score++;
-        this.scoreText.text = `Score: ${this.score}`;
     }
 }

@@ -1,4 +1,4 @@
-import { Actor, Animation, CollisionType, SpriteSheet, Engine, Vector, Input, ExitViewPortEvent, Random} from "excalibur";
+import { Actor, Animation, CollisionType, SpriteSheet, Engine, Vector, Input, ExitViewPortEvent, Random, DeactivateEvent} from "excalibur";
 import { Resources, ResourceLoader } from './resources.js';
 import { Entity } from "./Entity.js";
 
@@ -33,12 +33,12 @@ export class Enemy extends Entity {
 
     onPostUpdate(engine) {
         this.enemyDeath();
-        console.log(this.hp);
+        
         
     }
 
     onPostKill() {
-        this.game.addPoints();
+        this.game.score.addPoints();
     }
 
     enemyMovement(engine) {
@@ -52,6 +52,10 @@ export class Enemy extends Entity {
         if(this.hp <= 0) {
             this.kill()
         }
+    }
+
+    playerDeath() {
+        
     }
 
     

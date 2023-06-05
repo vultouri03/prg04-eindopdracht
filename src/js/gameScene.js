@@ -22,7 +22,7 @@ export class GameScene extends Scene {
     onInitialize(engine) {
         console.log('new scene');
         this.game = engine;
-
+        this.enemy= new Enemy();
         console.log("start de game!");
         const background = new Background(Resources.Background, 1.5, 1.5);
         this.add(background);
@@ -31,16 +31,18 @@ export class GameScene extends Scene {
 
         const ground = new Ground(0, 500);
         this.add(ground);
+        this.add(this.game.player);
+        this.add(this.game.ui);
        
 
          
 
-        const timer = new Timer({      
+        this.timer = new Timer({      
             fcn: () => this.spawnEnemy(),      
             repeats: true,      
             interval: this.time,  })
-          engine.currentScene.add(timer)  
-          timer.start()
+          engine.currentScene.add(this.timer)  
+          this.timer.start()
     }
 
     onPreUpdate(engine) {
@@ -54,9 +56,11 @@ export class GameScene extends Scene {
         this.add(new Enemy(this.randomX, this.randomY));
     }
 
-    Gameover() {
-        this.game.goToScene('gameOver')
+    onActivate(ctx) {
+        
     }
 
-    
+    restartGame() {
+
+    }
 }

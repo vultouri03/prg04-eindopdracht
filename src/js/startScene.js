@@ -5,11 +5,16 @@ import { Background } from './Background';
 import { ScoreUI } from "./ScoreUI.js";
 import { Ground } from './Ground';
 import { Enemy } from './enemy';
+import { StartButton } from "./StartButton.js";
 
-export class GameOverScene extends Scene {
+export class StartScene extends Scene {
+
+    constructor() {
+        super();
+    }
 
     onInitialize(engine) {
-        console.log("i am over")
+        console.log("lets a go")
     }
 
     onPostUpdate(engine) {
@@ -18,10 +23,12 @@ export class GameOverScene extends Scene {
 
     onActivate(ctx) {
         const ui = new ScoreUI();
-        const backGround = new Background(Resources.GameOver, 1, 1);
+        const startButton = new StartButton(450, 350);
+        const backGround = new Background(Resources.Start, 1, 1);
         backGround.pos = new Vector(450, 300)
         this.add(backGround);
         this.add(ui);
+        this.add(startButton);
     }
 
 }

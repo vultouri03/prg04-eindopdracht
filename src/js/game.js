@@ -7,7 +7,9 @@ import { Ground } from './Ground';
 import { Enemy } from './enemy';
 import {GameScene} from './gameScene';
 import { GameOverScene } from './gameOverScene';
-import {UI} from './ui.js'
+import {Score} from "./score ";
+import {UI} from './ui.js';
+import { StartScene } from './startScene';
 
 
 export class Game extends Engine {
@@ -24,21 +26,18 @@ export class Game extends Engine {
     }
 
     startGame() {
-        this.score = 0;
+        this.score = new Score();
+        this.add(this.score);
         this.player = new Player();
         console.log(this.player.hp)
-        const ui = new UI();
+        this.ui = new UI();
+        this.addScene('startScene', new StartScene())
         this.addScene('gameScene', new GameScene());
         this.addScene('gameOver', new GameOverScene())
-        this.goToScene('gameScene');
-        this.currentScene.add(this.player);
-        this.currentScene.add(ui);
+        this.goToScene('startScene');
+        //this.currentScene.add(this.player);
+        //this.currentScene.add(ui);
         
-    }
-
-
-    addPoints() {
-        this.score ++
     }
 }
 

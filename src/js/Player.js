@@ -123,9 +123,13 @@ export class Player extends Entity {
 
     playerDeath() {
       if(this.hp < 0) {
-        
-       this.game.goToScene('gameOver');
+        this.kill();
       }
+    }
+
+    onPostKill(engine) {
+      this.game.score.postScores();
+      this.game.goToScene('gameOver');
     }
 
     playerLeaveScreen() {
