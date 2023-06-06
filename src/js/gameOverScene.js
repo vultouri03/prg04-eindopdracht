@@ -17,7 +17,7 @@ export class GameOverScene extends Scene {
     }
 
     onActivate(ctx) {
-        const ui = new ScoreUI();
+        const ui = new ScoreUI(true);
         const backGround = new Background(Resources.GameOver, 1, 1);
         backGround.pos = new Vector(450, 300)
         this.add(backGround);

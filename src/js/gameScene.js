@@ -24,8 +24,9 @@ export class GameScene extends Scene {
         this.game = engine;
         this.enemy= new Enemy();
         console.log("start de game!");
-        const background = new Background(Resources.Background, 1.5, 1.5);
-        this.add(background);
+        const backGround = new Background(Resources.Background, 1, 1);
+        backGround.pos = new Vector(450, 300)
+        this.add(backGround);
         const floor = new Ground(900, 400);
         this.add(floor);
 

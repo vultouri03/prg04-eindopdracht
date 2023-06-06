@@ -1,10 +1,7 @@
 import '../css/style.css';
-import { Actor, Engine, Vector, Physics, Scene } from "excalibur";
+import {Engine} from "excalibur";
 import { Resources, ResourceLoader } from './resources.js';
 import { Player } from './Player';
-import { Background } from './Background';
-import { Ground } from './Ground';
-import { Enemy } from './enemy';
 import {GameScene} from './gameScene';
 import { GameOverScene } from './gameOverScene';
 import {Score} from "./score ";
@@ -20,7 +17,7 @@ export class Game extends Engine {
     constructor() {
         super({ width: 900, height: 600 });
         this.start(ResourceLoader).then(() => this.startGame());
-        
+        ResourceLoader.suppressPlayButton = true
         //this.showDebug(true);
         //this.debug.transform.showAll = true;
     }
@@ -35,8 +32,8 @@ export class Game extends Engine {
         this.addScene('gameScene', new GameScene());
         this.addScene('gameOver', new GameOverScene())
         this.goToScene('startScene');
-        //this.currentScene.add(this.player);
-        //this.currentScene.add(ui);
+        
+        
         
     }
 }

@@ -22,8 +22,8 @@ export class StartScene extends Scene {
     }
 
     onActivate(ctx) {
-        const ui = new ScoreUI();
-        const startButton = new StartButton(450, 350);
+        const ui = new ScoreUI(false);
+        const startButton = new StartButton(460, 300);
         const backGround = new Background(Resources.Start, 1, 1);
         backGround.pos = new Vector(450, 300)
         this.add(backGround);
